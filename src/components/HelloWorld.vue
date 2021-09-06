@@ -1,15 +1,10 @@
 <template>
   <div class="hello">
-    <mdb-btn color="secondary">Secondary</mdb-btn>
+    <router-link to="/login/loginView">
+      <button color="primary" >router-link</button>
+    </router-link>
 
-    <mdb-btn color="success">Success</mdb-btn>
-
-    <mdb-btn color="info">Info</mdb-btn>
-
-    <mdb-btn color="warning">Warning</mdb-btn>
-
-    <mdb-btn color="danger">Danger</mdb-btn>
-
+    <button color="default" @click="onBtnClicked()">router.push</button>
   </div>
 </template>
 
@@ -24,6 +19,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    onBtnClicked () {
+      this.$router.push('/login/loginView')
     }
   }
 }
