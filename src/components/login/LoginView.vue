@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <div>
         <p class="h4 text-center mb-4">Sign in</p>
         <div class="grey-text">
             <mdb-input v-model="userEmail" label="Your email" icon="envelope" type="email"/>
@@ -8,7 +8,7 @@
         <div class="text-center">
             <mdb-btn @click="requestLogin">Login</mdb-btn>
         </div>
-    </form>
+    </div>
 </template>
 
 <script>
@@ -28,13 +28,14 @@ export default {
     }
   },
   methods: {
-    requestLogin: function () {
-      this.$axios.post('api/auth/login',
+    async requestLogin () {
+      await this.$axios.post('/api/auth/login',
         {email: this.userEmail, password: this.userPw}
       ).then(response => {
-        console.log(response)
+        console.log(response.data)
+        console.log(response.data.message)
+        alert(response.data.console.error)
       }).catch((exception) => {
-        console.error('ERRORR!!!! : ', exception)
       })
     }
 

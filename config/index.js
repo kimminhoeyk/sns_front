@@ -12,8 +12,11 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target : '3.36.94.177:5000/api',
-        changeOrigin:true, 
+        target : 'http://3.36.94.177:5000/api',
+        changeOrigin:true,
+        pathRewrite: {
+          '^/api':""
+        }
       }
     },
     // Various Dev Server settings
