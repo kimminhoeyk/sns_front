@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p class="h4 text-center mb-4">Sign in</p>
+        <p class="h4 text-center mb-4">RoYal</p>
         <div class="grey-text">
             <mdb-input v-model="userEmail" label="Your email" icon="envelope" type="email"/>
             <mdb-input v-model="userPw" label="Your password" icon="lock" type="password"/>
@@ -23,8 +23,7 @@ export default {
   data () {
     return {
       userEmail: '',
-      userPw: '',
-      msg: 'Welcome to Your Vue.js App'
+      userPw: ''
     }
   },
   methods: {
@@ -32,10 +31,9 @@ export default {
       await this.$axios.post('/api/auth/login',
         {email: this.userEmail, password: this.userPw}
       ).then(response => {
-        console.log(response.data)
-        console.log(response.data.message)
-        alert(response.data.console.error)
+        this.$router.push({name: 'Main'})
       }).catch((exception) => {
+        alert('잘못된 비밀번호입니다. 다시 확인하세요.')
       })
     }
 
@@ -49,6 +47,6 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center; color: #2c3e50;
-    margin-top: 60px;
+    padding: 0 20rem 0 20rem;
 }
 </style>

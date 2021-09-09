@@ -1,10 +1,5 @@
 <template>
   <div class="hello">
-    <router-link to="/login/loginView">
-      <button color="primary" >router-link</button>
-    </router-link>
-
-    <button color="default" @click="onBtnClicked()">router.push</button>
   </div>
 </template>
 
