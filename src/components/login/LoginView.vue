@@ -8,6 +8,9 @@
         <div class="text-center">
             <mdb-btn @click="requestLogin">Login</mdb-btn>
         </div>
+        <div>
+          <img src="@/assets/kakao.png" @click="apiLogin">
+        </div>
     </div>
 </template>
 
@@ -35,8 +38,16 @@ export default {
       }).catch((exception) => {
         alert('잘못된 비밀번호입니다. 다시 확인하세요.')
       })
+    },
+    async apiLogin () {
+      // location = '/api/auth/kakao'
+      await this.$axios.get('/api/auth/kakao'
+      ).then(response => {
+        console.log(response)
+      }).catch((exception) => {
+        alert('잘못된 비밀번호입니다. 다시 확인하세요.')
+      })
     }
-
   }
 }
 </script>
