@@ -8,7 +8,7 @@
                 <span @click="route('LoginView')">로그인</span>
             </div>
             <div>
-                <span>회원가입</span>
+                <span @click="route('Register')">회원가입</span>
             </div>
         </div>
     </div>

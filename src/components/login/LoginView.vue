@@ -40,13 +40,13 @@ export default {
       })
     },
     async apiLogin () {
-      // location = '/api/auth/kakao'
-      await this.$axios.get('/api/auth/kakao'
-      ).then(response => {
-        console.log(response)
-      }).catch((exception) => {
-        alert('잘못된 비밀번호입니다. 다시 확인하세요.')
-      })
+      window.location.href = '/api/auth/kakao'
+      // window.open('/api/auth/kakao')
+      // await this.$axios.get('/api/auth/kakao/redirect'
+      // ).then(response => {
+      //   console.log(response)
+      // }).catch((exception) => {
+      // })
     }
   }
 }
